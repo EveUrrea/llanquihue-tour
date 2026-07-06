@@ -12,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // ===== FUNCIONALIDADES DE SEMANA 6 =====
         GestorDatos gestor = new GestorDatos();
         ArrayList<Tour> tours = gestor.cargarTours();
 
@@ -21,13 +22,13 @@ public class Main {
         servicio.mostrarToursCaros(tours);
         servicio.buscarPorTipo(tours, "Cultural");
 
-        System.out.println("\n===== SERVICIOS TURÍSTICOS SEMANA 6 =====");
+        // ===== FUNCIONALIDADES DE SEMANA 7 =====
+        System.out.println("\n===== SERVICIOS TURÍSTICOS - SEMANA 7 =====");
 
         GestorServicios gestorServicios = new GestorServicios();
-        ServicioTuristico[] serviciosTuristicos = gestorServicios.obtenerServicios();
 
-        for (ServicioTuristico servicioTuristico : serviciosTuristicos) {
-            System.out.println(servicioTuristico);
+        for (ServicioTuristico servicioTuristico : gestorServicios.obtenerServicios()) {
+            servicioTuristico.mostrarInformacion();
         }
     }
 }

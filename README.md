@@ -1,192 +1,101 @@
-# Llanquihue Tour App
+# LlanquihueTourApp
 
-Proyecto Java desarrollado para las actividades de las Semanas 5 y 6 de Desarrollo Orientado a Objetos I.
+Proyecto desarrollado para la asignatura **Desarrollo Orientado a Objetos I** de Duoc UC.
 
----
-
-## Descripción
-
-Llanquihue Tour App es una aplicación desarrollada en Java para gestionar información de tours y servicios turísticos de la agencia Llanquihue Tour.
-
-Durante la Semana 5 se implementó la carga de tours desde un archivo de texto utilizando ArrayList, lectura de archivos y encapsulamiento.
-
-Durante la Semana 6 se incorporó una jerarquía de clases mediante herencia simple para representar distintos tipos de servicios turísticos, reutilizando código y aplicando Programación Orientada a Objetos.
+Esta aplicación simula un sistema para la agencia turística **Llanquihue Tour**, aplicando los principios de Programación Orientada a Objetos vistos durante las semanas 6 y 7.
 
 ---
 
-## Objetivo Semana 6
+# Funcionalidades implementadas
 
-Implementar una jerarquía de clases utilizando herencia simple para representar distintos servicios turísticos de la agencia Llanquihue Tour, aplicando reutilización de código, sobrescritura del método `toString()` y uso de `super()` en los constructores.
+## Semana 6
+
+- Lectura de información desde el archivo `tours.txt`.
+- Uso de `ArrayList` para almacenar tours.
+- Encapsulamiento.
+- Herencia simple.
+- Uso de `super()` en los constructores.
+- Validación de datos.
+- Organización del proyecto mediante paquetes.
+- Búsqueda de tours por tipo.
+- Visualización de tours.
+- Visualización de tours con valor superior a un monto determinado.
 
 ---
 
-## Estructura del proyecto
+## Semana 7
+
+Se incorporó una jerarquía de servicios turísticos utilizando polimorfismo.
+
+### Clases implementadas
+
+- ServicioTuristico
+- RutaGastronomica
+- PaseoLacustre
+- ExcursionCultural
+
+### Funcionalidades agregadas
+
+- Implementación del método `mostrarInformacion()`.
+- Sobrescritura de métodos mediante `@Override`.
+- Uso de una colección `List<ServicioTuristico>`.
+- Gestión de distintos tipos de servicios turísticos en una misma colección.
+- Recorrido de la colección utilizando un bucle **for-each**.
+- Aplicación de polimorfismo invocando el método `mostrarInformacion()` desde referencias de la superclase.
+
+---
+
+# Estructura del proyecto
 
 ```
-LlanquihueTourApp/
-
-├── src/
+src
 │
-├── model/
-│   ├── Tour.java
-│   ├── ServicioTuristico.java
-│   ├── RutaGastronomica.java
-│   ├── PaseoLacustre.java
-│   └── ExcursionCultural.java
+├── data
+│   ├── GestorDatos
+│   └── GestorServicios
 │
-├── data/
-│   ├── GestorDatos.java
-│   └── GestorServicios.java
+├── model
+│   ├── Tour
+│   ├── ServicioTuristico
+│   ├── RutaGastronomica
+│   ├── PaseoLacustre
+│   └── ExcursionCultural
 │
-├── service/
-│   └── TourService.java
+├── service
+│   └── TourService
 │
-├── ui/
-│   └── Main.java
-│
-├── resources/
-│   └── tours.txt
-│
-└── README.md
+└── ui
+    └── Main
 ```
 
 ---
 
-# Clases implementadas
+# Requisitos
 
-## Tour.java
-
-Representa un tour turístico.
-
-Contiene:
-
-- nombre
-- tipo
-- precio
-
-Incluye:
-
-- Constructor
-- Getters y Setters
-- Método `toString()`
-
----
-
-## GestorDatos.java
-
-Responsable de leer el archivo `tours.txt` y cargar los datos en un `ArrayList`.
-
-Incluye manejo básico de excepciones mediante `try-catch`.
-
----
-
-## TourService.java
-
-Contiene la lógica de negocio de la aplicación.
-
-Permite:
-
-- Mostrar todos los tours.
-- Filtrar tours por precio.
-- Buscar tours por tipo.
-
----
-
-## ServicioTuristico.java
-
-Clase base de la jerarquía de servicios turísticos.
-
-Contiene:
-
-- nombre
-- duracionHoras
-
-Incluye:
-
-- Constructor con validaciones.
-- Getters.
-- Método `toString()`.
-
----
-
-## RutaGastronomica.java
-
-Hereda de `ServicioTuristico`.
-
-Atributo adicional:
-
-- numeroDeParadas
-
-Sobrescribe el método `toString()`.
-
----
-
-## PaseoLacustre.java
-
-Hereda de `ServicioTuristico`.
-
-Atributo adicional:
-
-- tipoEmbarcacion
-
-Sobrescribe el método `toString()`.
-
----
-
-## ExcursionCultural.java
-
-Hereda de `ServicioTuristico`.
-
-Atributo adicional:
-
-- lugarHistorico
-
-Sobrescribe el método `toString()`.
-
----
-
-## GestorServicios.java
-
-Clase encargada de crear las instancias de prueba de los servicios turísticos utilizados en la Semana 6.
-
----
-
-## Main.java
-
-Clase principal encargada de ejecutar la aplicación y mostrar los resultados por consola.
-
----
-
-# Tecnologías utilizadas
-
-- Java
-- IntelliJ IDEA
-- Git
-- GitHub
+- Java JDK 17 o superior.
+- IntelliJ IDEA (recomendado).
 
 ---
 
 # Cómo ejecutar
 
-1. Abrir el proyecto en IntelliJ IDEA.
-2. Verificar que el archivo `tours.txt` se encuentre dentro de la carpeta `resources`.
-3. Ejecutar la clase `Main.java`.
+1. Clonar o descargar el proyecto.
+2. Verificar que el archivo **tours.txt** se encuentre dentro de la carpeta **resources**.
+3. Ejecutar la clase **Main.java**.
 4. Revisar la salida por consola.
 
 ---
 
-# Funcionalidades demostradas
+# Conceptos aplicados
 
-- Lectura de archivos.
-- Uso de `ArrayList`.
+- Programación Orientada a Objetos.
 - Encapsulamiento.
-- Organización en paquetes.
-- Herencia simple.
-- Sobrescritura del método `toString()`.
-- Uso de `super()` en los constructores.
-- Validación de datos de entrada.
-- Creación de objetos mediante una jerarquía de clases.
-- Búsqueda y filtrado de información.
+- Herencia.
+- Polimorfismo.
+- Sobrescritura de métodos.
+- Colecciones (`List` y `ArrayList`).
+- Organización por paquetes.
+- Validación de datos.
 - Manejo básico de excepciones.
 
 ---
@@ -195,6 +104,6 @@ Clase principal encargada de ejecutar la aplicación y mostrar los resultados po
 
 **Evelyn Urrea**
 
-Actividad Semana 6 – Desarrollo Orientado a Objetos I
+Actividad Semanas 6 y 7 – Desarrollo Orientado a Objetos I
 
 Duoc UC

@@ -6,7 +6,6 @@ public class ServicioTuristico {
     private int duracionHoras;
 
     public ServicioTuristico(String nombre, int duracionHoras) {
-
         if (nombre == null || nombre.trim().isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede estar vacío.");
         }
@@ -27,9 +26,8 @@ public class ServicioTuristico {
         return duracionHoras;
     }
 
-    @Override
-    public String toString() {
-        return "Nombre: " + nombre +
-                ", Duración: " + duracionHoras + " horas";
+    public void mostrarInformacion() {
+        System.out.println("Servicio turístico: " + nombre);
+        System.out.println("Duración: " + duracionHoras + " horas");
     }
 }
