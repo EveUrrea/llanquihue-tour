@@ -1,109 +1,101 @@
-# LlanquihueTourApp
+# Llanquihue Tour App
 
-Proyecto desarrollado para la asignatura **Desarrollo Orientado a Objetos I** de Duoc UC.
+## Descripción del proyecto
 
-Esta aplicación simula un sistema para la agencia turística **Llanquihue Tour**, aplicando los principios de Programación Orientada a Objetos vistos durante las semanas 6 y 7.
-
----
-
-# Funcionalidades implementadas
-
-## Semana 6
-
-- Lectura de información desde el archivo `tours.txt`.
-- Uso de `ArrayList` para almacenar tours.
-- Encapsulamiento.
-- Herencia simple.
-- Uso de `super()` en los constructores.
-- Validación de datos.
-- Organización del proyecto mediante paquetes.
-- Búsqueda de tours por tipo.
-- Visualización de tours.
-- Visualización de tours con valor superior a un monto determinado.
+Llanquihue Tour App es una aplicación desarrollada en Java que permite gestionar información relacionada con una agencia de turismo. En esta versión se incorporan interfaces, herencia, polimorfismo, colecciones genéricas y una interfaz gráfica desarrollada con Swing, permitiendo registrar distintas entidades de la agencia de manera organizada.
 
 ---
 
-## Semana 7
+## Funcionalidades
 
-Se incorporó una jerarquía de servicios turísticos utilizando polimorfismo.
-
-### Clases implementadas
-
-- ServicioTuristico
-- RutaGastronomica
-- PaseoLacustre
-- ExcursionCultural
-
-### Funcionalidades agregadas
-
-- Implementación del método `mostrarInformacion()`.
-- Sobrescritura de métodos mediante `@Override`.
-- Uso de una colección `List<ServicioTuristico>`.
-- Gestión de distintos tipos de servicios turísticos en una misma colección.
-- Recorrido de la colección utilizando un bucle **for-each**.
-- Aplicación de polimorfismo invocando el método `mostrarInformacion()` desde referencias de la superclase.
+- Registro de Guías Turísticos.
+- Registro de Vehículos.
+- Registro de Colaboradores Externos.
+- Visualización de entidades registradas.
+- Interfaz gráfica desarrollada con JFrame.
+- Uso de colecciones genéricas (`ArrayList`).
+- Implementación de interfaces.
+- Aplicación de herencia y polimorfismo.
+- Validación de datos ingresados.
 
 ---
 
-# Estructura del proyecto
+## Tecnologías utilizadas
+
+- Java
+- IntelliJ IDEA
+- Java Swing (JFrame)
+- Git
+- GitHub
+
+---
+
+## Estructura del proyecto
 
 ```
 src
 │
+├── model
+│   ├── Registrable
+│   ├── RecursoAgencia
+│   ├── GuiaTuristico
+│   ├── Vehiculo
+│   ├── ColaboradorExterno
+│   ├── ServicioTuristico
+│   ├── Tour
+│   ├── PaseoLacustre
+│   ├── RutaGastronomica
+│   └── ExcursionCultural
+│
 ├── data
 │   ├── GestorDatos
-│   └── GestorServicios
-│
-├── model
-│   ├── Tour
-│   ├── ServicioTuristico
-│   ├── RutaGastronomica
-│   ├── PaseoLacustre
-│   └── ExcursionCultural
+│   ├── GestorServicios
+│   └── GestorEntidades
 │
 ├── service
 │   └── TourService
 │
 └── ui
-    └── Main
+    ├── Main
+    └── InterfazGrafica
 ```
 
 ---
 
-# Requisitos
+## Principales conceptos aplicados
 
-- Java JDK 17 o superior.
-- IntelliJ IDEA (recomendado).
+Durante el desarrollo del proyecto se implementaron los siguientes conceptos de Programación Orientada a Objetos:
 
----
-
-# Cómo ejecutar
-
-1. Clonar o descargar el proyecto.
-2. Verificar que el archivo **tours.txt** se encuentre dentro de la carpeta **resources**.
-3. Ejecutar la clase **Main.java**.
-4. Revisar la salida por consola.
-
----
-
-# Conceptos aplicados
-
-- Programación Orientada a Objetos.
 - Encapsulamiento.
 - Herencia.
 - Polimorfismo.
-- Sobrescritura de métodos.
-- Colecciones (`List` y `ArrayList`).
-- Organización por paquetes.
-- Validación de datos.
-- Manejo básico de excepciones.
+- Interfaces.
+- Clases abstractas.
+- Colecciones genéricas.
+- Uso de `instanceof`.
+- Organización del código mediante paquetes.
 
 ---
 
-# Autor
+## Cómo ejecutar el proyecto
 
-**Evelyn Urrea**
+1. Clonar o descargar el repositorio.
+2. Abrir el proyecto en IntelliJ IDEA.
+3. Ejecutar la clase:
 
-Actividad Semanas 6 y 7 – Desarrollo Orientado a Objetos I
+```
+ui.Main
+```
+
+4. Registrar entidades desde la interfaz gráfica.
+5. Visualizar los registros creados.
+
+---
+
+## Autor
+
+Evelyn Urrea
+
+Analista Programador Computacional
 
 Duoc UC
