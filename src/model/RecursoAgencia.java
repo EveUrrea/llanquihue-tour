@@ -1,11 +1,14 @@
 package model;
 
+/**
+ * Clase base para los recursos utilizados por la agencia.
+ */
 public abstract class RecursoAgencia implements Registrable {
 
     private String nombre;
 
     public RecursoAgencia(String nombre) {
-        this.nombre = nombre;
+        setNombre(nombre);
     }
 
     public String getNombre() {
@@ -13,6 +16,18 @@ public abstract class RecursoAgencia implements Registrable {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException(
+                    "El nombre no puede estar vacío."
+            );
+        }
+
+        this.nombre = nombre.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "nombre='" + nombre + '\'';
     }
 }
